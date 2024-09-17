@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://cdn.discordapp.com/attachments/1285165878031155272/1285559088159395870/ezgif.com-crop.gif?ex=66eab5b3&is=66e96433&hm=00836aaa5675b50484095d2ba1a80f76e004bef015818fdb259c0fa8a45fdcc8&">
+</p>
+
 <h4 align="center">
 Simple discord bot using for playing Wordle
 </h4>
