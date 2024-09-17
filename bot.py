@@ -5,6 +5,7 @@ import os
 import json
 
 from config import Config
+from utils.database_manager import SessionManager
 
 class Bot(commands.Bot):
     def __init__(self):
@@ -22,5 +23,7 @@ class Bot(commands.Bot):
         Config.set("EVENT_IS_RUNNING", False)
 
 bot = Bot()
+
+bot.session = SessionManager
 
 bot.run(Config.get("BOT_TOKEN"))
