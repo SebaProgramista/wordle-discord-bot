@@ -33,6 +33,25 @@ class SessionManager:
             print("Engine disposed.")
 
     @classmethod
+    def get_member(cls, member_id: int):
+        session = cls.get_session()
+
+        try:
+            member = session.query(Member).filter_by(id=member_id).first()
+            if member is None:
+                member = Member(id=member_id, words_guessed=0, yellow_guessed=0, green_guessed=0)
+                session.add(member)
+                session.commit()
+                
+        except Exception as e:
+            session.rollback()
+            print(f"Error incrementing win for member {member_id}: {e}")
+        finally:
+            session.close()
+
+        return member
+
+    @classmethod
     def increment_yellow_guessed(cls, member_id: int):
         session = cls.get_session()
 
